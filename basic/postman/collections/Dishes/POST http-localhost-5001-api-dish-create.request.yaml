@@ -1,0 +1,39 @@
+$kind: http-request
+name: POST http://localhost:5001/api/dish/create
+description: ""
+url: http://localhost:5001/api/dish/create
+method: POST
+headers:
+  name: steak
+  file: ""
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: Shawerma 3
+      disabled: false
+    - type: text
+      key: price
+      value: "12"
+      disabled: false
+    - type: text
+      key: availability
+      value: Yes
+      disabled: false
+    - type: text
+      key: description
+      value: MECuisine
+      disabled: false
+    - type: file
+      key: file
+      src:
+        - /D:/TAFE/Mobile Rui/2026s2 Week12Fri basic/shawerma2.jpg
+      description: ""
+      disabled: false
+    - type: text
+      key: categoryId
+      value: Nqonr4LSuFyHR0KCELoG
+      description: ""
+      disabled: false
+order: 1000

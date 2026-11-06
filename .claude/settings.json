@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start *)",
+      "PowerShell($c = Get-NetTCPConnection -LocalPort 5001 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { Stop-Process -Id $c.OwningProcess -Force; \"stopped $\\($c.OwningProcess\\)\" } else { \"nothing on 5001\" })"
+    ]
+  }
+}

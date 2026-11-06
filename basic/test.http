@@ -1,0 +1,79 @@
+POST http://localhost:5001/api/category/create
+Content-Type: application/json
+
+{
+  "name": "specials",
+  "description": "specials"
+}
+
+# entrées, mains, desserts, drinks, sides, specials
+
+# GET http://localhost:5001/api/category/getall
+###
+DELETE http://localhost:5001/api/category/delete/IYuzIX0UuMF1qk3KuLiJ
+
+
+###
+PUT http://localhost:5001/api/category/update/IYuzIX0UuMF1qk3KuLiJ 
+Content-Type: application/json
+
+{
+  "name": "Updated vEGE DRINKS",
+  "description": "Updated VDrinks"
+}
+
+###
+POST http://localhost:5001/api/dish/create
+Content-Type: application/json
+
+{
+  "name": "Shawerma 2",
+  "description": "Delicious Shawerma with fresh ingredients",
+  "price": 12.99,
+  "category": "5LuQvhhANYSyvfCnoFOD",
+  "imagefile": "D:\\TAFE\\Mobile Rui\\2026s2 Week12Fri basic\\shawerma2.jpg",
+  "availability": true,
+  "categoryId": "9iK8MedJLGUVMw5rqhFQ"
+}
+
+###
+# Step 1: load the dishes so the order can use real dish IDs
+# @name dishes
+GET http://localhost:5001/api/dish
+
+###
+# Step 2: place a random order (random quantities, random customer) using the first two dishes
+# Run Step 1 first. Needs at least 2 dishes in Firestore.
+POST http://localhost:5001/api/order/create
+Content-Type: application/json
+
+{
+  "customerName": "WALID",
+  "notes": "Random order {{$guid}}",
+  "items": [
+    { "dishId": "0R8F3VvJbjXvCWmmrMRP", "quantity": {{$randomInt 1 5}} },
+    { "dishId": "161jnooFQRat5sBuIjii", "quantity": {{$randomInt 1 5}} }
+  ]
+}
+
+
+
+###
+# Create a new user
+POST http://localhost:5001/api/user/create
+Content-Type: application/json
+
+{
+  "email": "wa@gmail.com",
+  "password": "wa@gmail.com"
+}
+
+###
+# Login with the user created above
+POST http://localhost:5001/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "wa@gmail.com",
+  "password": "wa@gmail.com"
+}
